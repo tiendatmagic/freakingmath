@@ -51,6 +51,7 @@ function checkCookie() {
 
 document.getElementsByClassName("btn-start")[0].addEventListener("click", function () {
     document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
+    document.getElementsByClassName("footer")[0].style.display = 'none';
     document.getElementById("mainstart").style.display = 'none';
     document.getElementById("maingame").style.display = 'block';
     document.getElementsByClassName("btn-end")[0].style.display = 'block';
