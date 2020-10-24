@@ -166,11 +166,11 @@ h2.score {
 
     position: absolute;
     bottom: 0px;
-  
+    left: 5%;
 
 }
 
 .footer h4 {
-    font-size: 2.4vh;
+    font-size: 1.7vh;
     text-align: center;
 }
