@@ -96,11 +96,11 @@ function truee() {
     }
     else {
         document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
-        var fscore = getCookie("fscore");       
-        fscore = score;    
+        var fscore = getCookie("fscore");
+        fscore = score;
         if (fscore != null) {
             setCookie("fscore", fscore, 30);
-    
+
         }
         document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
         location.reload();
@@ -126,11 +126,11 @@ function falsee() {
 
     else {
         document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
-        var fscore = getCookie("fscore");       
-        fscore = score;    
+        var fscore = getCookie("fscore");
+        fscore = score;
         if (fscore != null) {
             setCookie("fscore", fscore, 30);
-    
+
         }
         document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
         location.reload();
