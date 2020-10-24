@@ -61,6 +61,7 @@ html {
     outline: 0;
     border: 0;
     font-size: 5vw;
+    border-radius: 36%;
 }
 
 #maingame {
@@ -137,7 +138,7 @@ html {
     position: absolute;
     width: 80%;
     height: 60vh;
-    background-color: rgba(107, 12, 56, 0.9);
+    background-color: rgba(24, 24, 24, 0.7);
     margin: 0 auto;
     margin-top: 20vh;
     text-align: center;
@@ -154,12 +155,14 @@ html {
 h2.score {
     font-size: 7vh;
     margin-top: 20vh;
+    color: deeppink;
 }
 
 .btn-reload {
-    padding: 3vh;
+    padding: 4vh;
+    font-size: 3vh;
     border-radius: 20%;
-    background-color: greenyellow;
+    background-color: rgb(71, 255, 47);
 }
 
 .footer {
