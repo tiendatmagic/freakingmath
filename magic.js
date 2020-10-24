@@ -104,6 +104,21 @@ function truee() {
     if (ques === answ) {
         score += 1;
         document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
+
+        if (score > highscore) {
+            highscore = score;
+            document.getElementsByClassName("highscore")[0].innerText = "Điểm: " + highscore;
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+            var fhighscore = getCookie("fhighscore");
+            fhighscore = highscore;
+            if (fhighscore != null) {
+                setCookie("fhighscore", fhighscore, 30);
+        
+            }
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+           // checkCookie();
+        }
+        
         startgame();
 
     }
@@ -120,6 +135,20 @@ function falsee() {
     if (ques === answ) {
         score += 1;
         document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
+        if (score > highscore) {
+            highscore = score;
+            document.getElementsByClassName("highscore")[0].innerText = "Điểm: " + highscore;
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+            var fhighscore = getCookie("fhighscore");
+            fhighscore = highscore;
+            if (fhighscore != null) {
+                setCookie("fhighscore", fhighscore, 30);
+        
+            }
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+           // checkCookie();
+        }
+        
         startgame();
 
     }
