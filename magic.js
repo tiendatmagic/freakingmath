@@ -39,31 +39,31 @@ function checkCookie() {
         }
     }
 
-    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
     var fhighscore = getCookie("fhighscore");
     fhighscore = highscore;
     if (fhighscore != null) {
         setCookie("fhighscore", fhighscore, 30);
 
     }
-    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
 }
 
 document.getElementsByClassName("btn-start")[0].addEventListener("click", function () {
-    document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
+    document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
     document.getElementById("mainstart").style.display = 'none';
     document.getElementById("maingame").style.display = 'block';
     document.getElementsByClassName("btn-end")[0].style.display = 'block';
     startgame();
     //highscore +=1;
-    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
     var fhighscore = getCookie("fhighscore");
     fhighscore = highscore;
     if (fhighscore != null) {
         setCookie("fhighscore", fhighscore, 30);
 
     }
-    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+    document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
 });
 
 
@@ -72,12 +72,17 @@ document.getElementsByClassName("btn-end")[0].addEventListener("click", function
     location.reload();
 
 });
+
+document.getElementsByClassName("btn-reload")[0].addEventListener("click", function () {
+    location.reload();
+
+});
 document.getElementsByClassName("true")[0].addEventListener("click", truee);
 document.getElementsByClassName("false")[0].addEventListener("click", falsee);
 
 function startgame() {
-    a = Math.floor(Math.random() * 20);
-    b = Math.floor(Math.random() * 10);
+    a = Math.floor(Math.random() * 50);
+    b = Math.floor(Math.random() * 50);
     rd = Math.floor(Math.random() * 2);
 
     switch (rd) {
@@ -108,14 +113,14 @@ function truee() {
         if (score > highscore) {
             highscore = score;
             document.getElementsByClassName("highscore")[0].innerText = "Điểm: " + highscore;
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
             var fhighscore = getCookie("fhighscore");
             fhighscore = highscore;
             if (fhighscore != null) {
                 setCookie("fhighscore", fhighscore, 30);
         
             }
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
            // checkCookie();
         }
         
@@ -124,8 +129,9 @@ function truee() {
     }
 
     else {
-        document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
-        location.reload();
+        document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
+        document.getElementsByClassName("modal")[0].style.display='block';
+        document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     }
 
 }
@@ -138,15 +144,15 @@ function falsee() {
         if (score > highscore) {
             highscore = score;
             document.getElementsByClassName("highscore")[0].innerText = "Điểm: " + highscore;
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
             var fhighscore = getCookie("fhighscore");
             fhighscore = highscore;
             if (fhighscore != null) {
                 setCookie("fhighscore", fhighscore, 30);
         
             }
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm của bạn:" + highscore;
-           // checkCookie();
+            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
+        
         }
         
         startgame();
@@ -154,8 +160,10 @@ function falsee() {
     }
 
     else {
-        document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
-        location.reload();
+        document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
+        //location.reload();
+        document.getElementsByClassName("modal")[0].style.display='block';
+        document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     }
 
 }

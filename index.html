@@ -5,124 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freaking Math</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            outline: 0;
-            border: 0;
-
-
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-
-        }
-
-        html {
-            font-family: sans-serif;
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }
-
-
-        #scr .score {
-            position: absolute;
-            margin-left: 30px;
-        }
-
-        #scr .highscore {
-            position: absolute;
-            margin-left: 170px;
-        }
-
-        #mainstart {
-            text-align: center;
-        }
-
-        .btn-start {
-            position: absolute;
-            top: 40%;
-            left: 35%;
-            padding: 5vw;
-            background-color: rgb(41, 255, 58);
-            outline: 0;
-            border: 0;
-            font-size: 5vw;
-        }
-
-        #maingame {
-            display: none;
-        }
-
-        #main {
-            width: 100%;
-            height: 60vh;
-            background-color: blueviolet;
-            justify-content: center;
-            text-align: center;
-            display: flex;
-            align-items: center;
-        }
-
-        .btn-end {
-            display: none;
-            position: absolute;
-            right: 0;
-            padding: 5vh;
-            background-color: white;
-            border: 0;
-            border-radius: 20%;
-            font-size: 2vh;
-        }
-
-        #main span {
-            font-size: 15vw;
-        }
-
-        #truefalse {
-            display: flex;
-        }
-
-        #truefalse div {
-            flex: 1;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            height: 40vh;
-        }
-
-        #truefalse .true {
-            background-color: chartreuse;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #truefalse .false {
-            background-color: red;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body onload="checkCookie()">
@@ -147,6 +30,18 @@
             <div class="true">True</div>
             <div class="false">False</div>
         </div>
+        <div class="modal">
+            <div class="modal-content">
+
+                <div class="md">
+                    <h2 class="score"></h2>
+                    <br>
+                    <input type="button" class="btn-reload" value="Chơi lại">
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
     <script src="./magic.js"></script>
