@@ -3,6 +3,8 @@ var score = 0;
 
 
 
+
+
 function setCookie(hihihi, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000000));
@@ -36,6 +38,15 @@ function checkCookie() {
             setCookie("fscore", fscore, 30);
         }
     }
+
+    document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
+    var fscore = getCookie("fscore");
+    fscore = score;
+    if (fscore != null) {
+        setCookie("fscore", fscore, 30);
+
+    }
+    document.getElementsByClassName("score")[0].innerHTML = "Điểm của bạn:" + score;
 }
 
 document.getElementsByClassName("btn-start")[0].addEventListener("click", function () {
