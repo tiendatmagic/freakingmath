@@ -1,7 +1,7 @@
 
 var score = 0;
 var highscore = 0;
-var time = 30;
+var time = 60;
 var tim;
 
 
