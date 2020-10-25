@@ -134,24 +134,12 @@ function truee() {
         score += 1;
         document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
 
-        if (score > highscore) {
-            highscore = score;
-            document.getElementsByClassName("highscore")[0].innerText = "Điểm: " + highscore;
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
-            var fhighscore = getCookie("fhighscore");
-            fhighscore = highscore;
-            if (fhighscore != null) {
-                setCookie("fhighscore", fhighscore, 30);
 
-            }
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
-            // checkCookie();
-        }
 
         startgame();
 
     }
-
+   
     else {
         document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
         document.getElementsByClassName("modal")[0].style.display = 'block';
@@ -159,7 +147,7 @@ function truee() {
         time = 0;
         clearInterval(tim);
     }
-
+    savehighscore();
 }
 
 function falsee() {
@@ -167,19 +155,7 @@ function falsee() {
     if (ques === answ) {
         score += 1;
         document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
-        if (score > highscore) {
-            highscore = score;
-            document.getElementsByClassName("highscore")[0].innerText = "Điểm: " + highscore;
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
-            var fhighscore = getCookie("fhighscore");
-            fhighscore = highscore;
-            if (fhighscore != null) {
-                setCookie("fhighscore", fhighscore, 30);
 
-            }
-            document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
-
-        }
 
         startgame();
 
@@ -193,8 +169,23 @@ function falsee() {
         time = 0;
         clearInterval(tim);
     }
-
+    savehighscore();
 }
 
 
 
+function savehighscore() {
+    if (score > highscore) {
+        highscore = score;
+        document.getElementsByClassName("highscore")[0].innerText = "Điểm: " + highscore;
+        document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
+        var fhighscore = getCookie("fhighscore");
+        fhighscore = highscore;
+        if (fhighscore != null) {
+            setCookie("fhighscore", fhighscore, 30);
+
+        }
+        document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
+        
+    }
+}
