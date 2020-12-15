@@ -1,12 +1,16 @@
 var score = 0;
 var time = 60;
 var tim;
+var playg = 0;
 var highscore = JSON.parse(localStorage.getItem("highscore"));
 if (highscore === null) {
     highscore = 0;
 }
+document.getElementsByClassName("time")[0].innerHTML = "Thời gian: " + time;
+
 document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
 document.getElementsByClassName("btn-start")[0].addEventListener("click", function () {
+    playg = 1;
     document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
     document.getElementsByClassName("footer")[0].style.display = 'none';
     document.getElementById("mainstart").style.display = 'none';
@@ -14,9 +18,14 @@ document.getElementsByClassName("btn-start")[0].addEventListener("click", functi
     document.getElementsByClassName("btn-end")[0].style.display = 'block';
     startgame();
     checktime();
+    document.getElementsByClassName("time")[0].style.display = "block";
+    setInterval(() => {
+        document.getElementsByClassName("time")[0].innerHTML = "Thời gian: " + time;
+    }, 1000);
     document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
     document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
 });
+
 document.getElementsByClassName("btn-end")[0].addEventListener("click", function () {
     location.reload();
 });
@@ -26,34 +35,51 @@ document.getElementsByClassName("btn-reload")[0].addEventListener("click", funct
 document.getElementsByClassName("true")[0].addEventListener("click", truee);
 document.getElementsByClassName("false")[0].addEventListener("click", falsee);
 
+window.addEventListener("keydown", function (event) {
+
+    if (event.which === 37) {
+        if (playg === 1)
+            truee();
+    }
+
+    else if (event.which === 39) {
+        if (playg === 1)
+            falsee();
+    }
+
+}, true);
 function startgame() {
+
     a = Math.floor(Math.random() * 50);
     b = Math.floor(Math.random() * 50);
-    rd = Math.floor(Math.random() * 6);
+    rd = Math.floor(Math.random() * 8);
     switch (rd) {
 
+
         case 0:
-            c = a + b;
-            ques = 1;
-            break;
-        case 1:
             c = a + b + 10;
             ques = 0;
             break;
-        case 2:
+        case 1:
             c = a + b - 10;
             ques = 0;
             break;
-        case 3:
+        case 2:
             c = a + b - Math.ceil(Math.random() * 4);
             ques = 0;
             break;
+        case 3:
         case 4:
-        case 5:
             c = a + b + Math.ceil(Math.random() * 4);
             ques = 0;
             break;
 
+        case 5:
+        case 6:
+        case 7:
+            c = a + b;
+            ques = 1;
+            break;
         default:
             rd = Math.floor(Math.random() * 3);
             break;
@@ -85,6 +111,7 @@ function truee() {
         document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
         startgame();
     } else {
+        playg = 0;
         document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
         document.getElementsByClassName("modal")[0].style.display = 'block';
         document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
@@ -101,6 +128,7 @@ function falsee() {
         document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
         startgame();
     } else {
+        playg = 0;
         document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
         document.getElementsByClassName("modal")[0].style.display = 'block';
         document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;

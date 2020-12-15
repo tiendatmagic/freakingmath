@@ -36,12 +36,17 @@ html {
 }
 
 
+#scr .time {
+    display: none;
+    position: absolute;
+    top: 0vh;
+    font-size: 3vh;
+}
+
 #scr .score {
     position: absolute;
     top: 4vh;
     font-size: 3vh;
-
-
 }
 
 #scr .highscore {
