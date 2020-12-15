@@ -29,20 +29,31 @@ document.getElementsByClassName("false")[0].addEventListener("click", falsee);
 function startgame() {
     a = Math.floor(Math.random() * 50);
     b = Math.floor(Math.random() * 50);
-    rd = Math.floor(Math.random() * 3);
+    rd = Math.floor(Math.random() * 6);
     switch (rd) {
+
         case 0:
-            c = a + b + Math.ceil(Math.random() * 4);
-            ques = 0;
-            break;
-        case 1:
             c = a + b;
             ques = 1;
             break;
-        case 2:
+        case 1:
             c = a + b + 10;
             ques = 0;
             break;
+        case 2:
+            c = a + b - 10;
+            ques = 0;
+            break;
+        case 3:
+            c = a + b - Math.ceil(Math.random() * 4);
+            ques = 0;
+            break;
+        case 4:
+        case 5:
+            c = a + b + Math.ceil(Math.random() * 4);
+            ques = 0;
+            break;
+
         default:
             rd = Math.floor(Math.random() * 3);
             break;
