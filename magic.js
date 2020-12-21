@@ -2,6 +2,7 @@ var score = 0;
 var time = 60;
 var tim;
 var playg = 0;
+var bgcolor = 0;
 var highscore = JSON.parse(localStorage.getItem("highscore"));
 if (highscore === null) {
     highscore = 0;
@@ -24,6 +25,25 @@ document.getElementsByClassName("btn-start")[0].addEventListener("click", functi
     }, 1000);
     document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
     document.getElementsByClassName("highscore")[0].innerHTML = "Điểm cao nhất:" + highscore;
+    bgcolor = Math.floor(Math.random() * 4);
+
+    switch (bgcolor) {
+        case 0:
+            document.getElementById("main").style.backgroundColor = 'purple';
+            break;
+        case 1:
+            document.getElementById("main").style.backgroundColor = '#FF66FF';
+            break;
+        case 2:
+            document.getElementById("main").style.backgroundColor = '#0099FF';
+            break;
+        case 3:
+            document.getElementById("main").style.backgroundColor = '#FF6633';
+            break;
+        default:
+            document.getElementById("main").style.backgroundColor = 'purple';
+            break;
+    }
 });
 
 document.getElementsByClassName("btn-end")[0].addEventListener("click", function () {
