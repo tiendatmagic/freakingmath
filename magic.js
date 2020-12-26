@@ -77,9 +77,12 @@ function startgame() {
 
 
         case 0:
-            c = a + b + 10;
-            ques = 0;
+        case 3:
+        case 6:
+            c = a + b;
+            ques = 1;
             break;
+
         case 1:
             c = a + b - 10;
             ques = 0;
@@ -88,18 +91,17 @@ function startgame() {
             c = a + b - Math.ceil(Math.random() * 4);
             ques = 0;
             break;
-        case 3:
+
+        case 5:
+            c = a + b + 10;
+            ques = 0;
+            break;
         case 4:
+        case 7:
             c = a + b + Math.ceil(Math.random() * 4);
             ques = 0;
             break;
 
-        case 5:
-        case 6:
-        case 7:
-            c = a + b;
-            ques = 1;
-            break;
         default:
             rd = Math.floor(Math.random() * 3);
             break;
