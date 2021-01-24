@@ -62,11 +62,15 @@ html {
   left: 35%;
   padding: 5vw;
   background-color: rgb(41, 255, 58);
+  box-shadow: -3px -3px 7px #fff, 3px 3px 5px grey;
   outline: 0;
   border: 0;
   font-size: 5vw;
   border-radius: 20px;
   cursor: pointer;
+}
+.btn-start:hover {
+  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
 }
 
 #maingame {
@@ -110,11 +114,16 @@ html {
   text-align: center;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 37vh;
+  margin: 10px;
+  box-shadow: -3px -3px 7px #fff, 3px 3px 5px grey;
 }
-
+#truefalse div:hover {
+  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
+}
 #truefalse .true {
   background-color: chartreuse;
+  /* background-color: #fff; */
   display: flex;
   text-align: center;
   justify-content: center;
@@ -123,6 +132,7 @@ html {
 
 #truefalse .false {
   background-color: red;
+  /* background-color: #fff; */
   display: flex;
   text-align: center;
   justify-content: center;
