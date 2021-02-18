@@ -69,7 +69,7 @@ html {
   border-radius: 20px;
   cursor: pointer;
 }
-.btn-start:hover {
+.btn-start:active {
   box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
 }
 
@@ -118,12 +118,11 @@ html {
   margin: 10px;
   box-shadow: -3px -3px 7px #fff, 3px 3px 5px grey;
 }
-#truefalse div:hover {
+#truefalse div:active {
   box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
 }
 #truefalse .true {
   background-color: chartreuse;
-  /* background-color: #fff; */
   display: flex;
   text-align: center;
   justify-content: center;
@@ -132,7 +131,6 @@ html {
 
 #truefalse .false {
   background-color: red;
-  /* background-color: #fff; */
   display: flex;
   text-align: center;
   justify-content: center;
@@ -175,9 +173,12 @@ h2.score {
   font-size: 3vh;
   border-radius: 20%;
   background-color: rgb(71, 255, 47);
+  box-shadow: -3px -3px 7px #fff, 3px 3px 5px grey;
   cursor: pointer;
 }
-
+.btn-reload:active {
+  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
+}
 .footer {
   position: absolute;
   bottom: 0px;
