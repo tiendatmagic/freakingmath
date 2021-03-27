@@ -36,7 +36,7 @@ document
 
     switch (bgcolor) {
       case 0:
-        document.getElementById("main").style.backgroundColor = "purple";
+        document.getElementById("main").style.backgroundColor = "#c92bc9";
         break;
       case 1:
         document.getElementById("main").style.backgroundColor = "#FF66FF";
