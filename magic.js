@@ -17,7 +17,6 @@ document
   .addEventListener("click", function () {
     playg = 1;
     document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
-    document.getElementsByClassName("footer")[0].style.display = "none";
     document.getElementById("mainstart").style.display = "none";
     document.getElementById("maingame").style.display = "block";
     document.getElementsByClassName("btn-end")[0].style.display = "block";
@@ -80,11 +79,12 @@ window.addEventListener(
 function startgame() {
   a = Math.floor(Math.random() * 50);
   b = Math.floor(Math.random() * 50);
-  rd = Math.floor(Math.random() * 8);
+  rd = Math.floor(Math.random() * 9);
   switch (rd) {
     case 0:
     case 3:
     case 6:
+    case 8:
       c = a + b;
       ques = 1;
       break;

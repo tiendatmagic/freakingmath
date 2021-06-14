@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Freaking Math</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
+  <body>
     <div id="scr">
-        <div class="time"></div>
-        <div class="score"></div>
-        <div class="highscore"></div>
-        <input type="button" class="btn-end" value="Thoát ra">
+      <div class="time"></div>
+      <div class="score"></div>
+      <div class="highscore"></div>
+      <input type="button" class="btn-end" value="Thoát ra" />
     </div>
 
     <div id="mainstart">
-
-        <input type="button" class="btn-start" value="Vào game">
-
+      <input type="button" class="btn-start" value="Vào game" />
     </div>
     <div id="maingame">
-        <div id="main">
-
-            <span class="s1"></span><span>+</span><span class="s2"></span><span>=</span><span></span><span
-                class="s3"></span>
+      <div id="main">
+        <span class="s1"></span><span>+</span><span class="s2"></span
+        ><span>=</span><span></span><span class="s3"></span>
+      </div>
+      <div id="truefalse">
+        <div class="true">
+          <span style="font-size: 5vh;">Đúng</span>
         </div>
-        <div id="truefalse">
-            <div class="true">
-                <span style="font-size: 5vh;">Đúng</span>
-            </div>
-            <div class="false">
-                <span style="font-size: 5vh;">Sai</span>
-            </div>
+        <div class="false">
+          <span style="font-size: 5vh;">Sai</span>
         </div>
-        <div class="modal">
-            <div class="modal-content">
-
-                <div class="md">
-                    <h2 class="score"></h2>
-                    <br>
-                    <input type="button" class="btn-reload" value="Chơi lại">
-                </div>
-
-            </div>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <div class="md">
+            <h2 class="score"></h2>
+            <br />
+            <input type="button" class="btn-reload" value="Chơi lại" />
+          </div>
         </div>
-
+      </div>
     </div>
-    <div class="footer">
-        <h4 class="text-danger text-gt">© 2020 Copyright by Tiendatmagic - All Rights Reserved | Designed by
-            Tiendatmagic</h4>
-        <h4 class="text-danger text-gt">Liên hệ:<a href="https://www.facebook.com/tiendatmagic"
-                style="color: deeppink;">Tiến Đạt Magic</a></h4>
-    </div>
+
     <script src="./magic.js"></script>
-</body>
-
+  </body>
 </html>
