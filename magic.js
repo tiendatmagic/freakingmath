@@ -1,5 +1,5 @@
 var score = 0;
-var time = 60;
+var time = 30;
 var tim;
 var playg = 0;
 var bgcolor = 0;
@@ -16,10 +16,10 @@ document
   .getElementsByClassName("btn-start")[0]
   .addEventListener("click", function () {
     playg = 1;
-    document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
+    document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
     document.getElementById("mainstart").style.display = "none";
     document.getElementById("maingame").style.display = "block";
-    document.getElementsByClassName("btn-end")[0].style.display = "block";
+
     startgame();
     checktime();
     document.getElementsByClassName("time")[0].style.display = "block";
@@ -49,11 +49,6 @@ document
     }
   });
 
-document
-  .getElementsByClassName("btn-end")[0]
-  .addEventListener("click", function () {
-    location.reload();
-  });
 document
   .getElementsByClassName("btn-reload")[0]
   .addEventListener("click", function () {
@@ -119,13 +114,15 @@ function checktime() {
     time -= 1;
     if (time <= 0) {
       time = 0;
-      clearInterval(tim);
     }
     if (time === 0) {
       document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
       document.getElementsByClassName("modal")[0].style.display = "block";
       document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     }
+
+    document.getElementsByClassName("line")[0].style.width =
+      "calc(100% /" + time + ")";
   }, 1000);
 }
 
@@ -135,13 +132,13 @@ function truee() {
     score += 1;
     document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
     startgame();
+    time = 4;
   } else {
     playg = 0;
     document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
     document.getElementsByClassName("modal")[0].style.display = "block";
     document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     time = 0;
-    clearInterval(tim);
   }
   savehighscore();
 }
@@ -152,13 +149,13 @@ function falsee() {
     score += 1;
     document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
     startgame();
+    time = 4;
   } else {
     playg = 0;
-    document.getElementsByClassName("score")[0].innerHTML = "Điểm :" + score;
+    document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
     document.getElementsByClassName("modal")[0].style.display = "block";
     document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     time = 0;
-    clearInterval(tim);
   }
   savehighscore();
 }
