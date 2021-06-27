@@ -20,8 +20,9 @@ body {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  background-color: dodgerblue;
+  background-color: #fff3fa;
   overflow: hidden;
+  padding: 10px;
 }
 
 html {
@@ -36,21 +37,24 @@ html {
 #scr .time {
   display: none;
   position: absolute;
-  top: 0vh;
-  font-size: 3vh;
+  top: 30px;
+  left: 30px;
+  font-size: 20px;
 }
 
 #scr .score {
   position: absolute;
-  top: 4vh;
-  font-size: 3vh;
+  top: 55px;
+  left: 30px;
+  font-size: 20px;
 }
 
 #scr .highscore {
   display: inline-block;
   position: absolute;
-  top: 8vh;
-  font-size: 3vh;
+  top: 80px;
+  left: 30px;
+  font-size: 20px;
 }
 
 #mainstart {
@@ -62,8 +66,8 @@ html {
   top: 40%;
   left: 35%;
   padding: 5vw;
-  background-color: rgb(41, 255, 58);
-
+  background-color: #ffe0f3;
+  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
   outline: 0;
   border: 0;
   font-size: 5vw;
@@ -71,7 +75,8 @@ html {
   cursor: pointer;
 }
 .btn-start:active {
-  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
+  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #effdff, inset 3px 3px 6px #aaa,
+    inset -3px -3px 6px #effdff;
 }
 
 #maingame {
@@ -81,24 +86,28 @@ html {
 #main {
   width: 100%;
   height: 60vh;
-  background-color: blueviolet;
+  background-color: #ffc9ea;
   justify-content: center;
   text-align: center;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: -1;
+  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
 }
 
 .btn-end {
   display: none;
   position: absolute;
   top: 3.8vh;
-  right: 0;
+  right: 30px;
   padding: 3vh;
-  background-color: white;
+  background-color: #ffc9ea;
   border: 0;
   border-radius: 10px;
   font-size: 2vh;
   cursor: pointer;
+  box-shadow: 3px 3px 5px #aaaaaa5e, -3px -3px 5px #ffdef4;
 }
 
 #main span {
@@ -117,24 +126,29 @@ html {
   align-items: center;
   height: 37vh;
   margin: 10px;
+  font-size: 8vh;
 }
 #truefalse div:active {
   box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
 }
 #truefalse .true {
-  background-color: chartreuse;
+  background-color: #ffe0f3;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
+  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
+  color: #32ff00;
 }
 
 #truefalse .false {
-  background-color: red;
+  background-color: #ffe0f3;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
+  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
+  color: red;
 }
 
 .modal {
