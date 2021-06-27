@@ -20,7 +20,7 @@ body {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  background-color: #fff3fa;
+  background-color: #ffeff8;
   overflow: hidden;
   padding: 10px;
 }
@@ -75,8 +75,8 @@ html {
   cursor: pointer;
 }
 .btn-start:active {
-  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #effdff, inset 3px 3px 6px #aaa,
-    inset -3px -3px 6px #effdff;
+  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #ffe8f5, inset 3px 3px 6px #aaa,
+    inset -3px -3px 6px #ffe8f5;
 }
 
 #maingame {
