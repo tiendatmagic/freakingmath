@@ -24,7 +24,7 @@ document
     checktime();
     setInterval(() => {}, 1000);
 
-    bgcolor = Math.floor(Math.random() * 5);
+    bgcolor = Math.floor(Math.random() * 6);
 
     switch (bgcolor) {
       case 0:
@@ -44,7 +44,7 @@ document
           "#800080";
       case 4:
         document.getElementsByTagName("body")[0].style.backgroundColor =
-          "#ffb3ff";
+          "#db0080";
         break;
       default:
         document.getElementsByTagName("body")[0].style.backgroundColor =
