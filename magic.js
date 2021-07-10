@@ -1,5 +1,5 @@
 var score = 0;
-var time = 30;
+var time = 3;
 var tim;
 var playg = 0;
 var bgcolor = 0;
@@ -8,43 +8,47 @@ if (highscore === null) {
   highscore = 0;
 }
 
-document.getElementsByClassName("time")[0].innerHTML = "Thời gian: " + time;
-
 document.getElementsByClassName("highscore")[0].innerHTML =
   "Điểm cao nhất:" + highscore;
 document
   .getElementsByClassName("btn-start")[0]
   .addEventListener("click", function () {
     playg = 1;
-    document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
+    document.getElementsByClassName("nametitle")[0].style.display = "none";
+
+    document.getElementsByClassName("score")[0].innerHTML = score;
     document.getElementById("mainstart").style.display = "none";
     document.getElementById("maingame").style.display = "block";
 
     startgame();
     checktime();
-    document.getElementsByClassName("time")[0].style.display = "block";
-    setInterval(() => {
-      document.getElementsByClassName("time")[0].innerHTML =
-        "Thời gian: " + time;
-    }, 1000);
-    document.getElementsByClassName("highscore")[0].innerHTML =
-      "Điểm cao nhất:" + highscore;
-    document.getElementsByClassName("highscore")[0].innerHTML =
-      "Điểm cao nhất:" + highscore;
-    bgcolor = Math.floor(Math.random() * 3);
+    setInterval(() => {}, 1000);
+
+    bgcolor = Math.floor(Math.random() * 5);
 
     switch (bgcolor) {
       case 0:
-        document.getElementById("main").style.color = "#c92bc9";
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+          "#c92bc9";
         break;
       case 1:
-        document.getElementById("main").style.color = "#0099FF";
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+          "#0099FF";
         break;
       case 2:
-        document.getElementById("main").style.color = "#FF6633";
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+          "#adff2f";
+        break;
+      case 3:
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+          "#800080";
+      case 4:
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+          "#ffb3ff";
         break;
       default:
-        document.getElementById("main").style.color = "purple";
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+          "#FF6633";
         break;
     }
   });
@@ -116,7 +120,7 @@ function checktime() {
       time = 0;
     }
     if (time === 0) {
-      document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
+      document.getElementsByClassName("score")[0].innerHTML = score;
       document.getElementsByClassName("modal")[0].style.display = "block";
       document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     }
@@ -130,12 +134,12 @@ function truee() {
   answ = 1;
   if (ques === answ) {
     score += 1;
-    document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
+    document.getElementsByClassName("score")[0].innerText = score;
     startgame();
-    time = 4;
+    time = 3;
   } else {
     playg = 0;
-    document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
+    document.getElementsByClassName("score")[0].innerHTML = score;
     document.getElementsByClassName("modal")[0].style.display = "block";
     document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     time = 0;
@@ -147,12 +151,12 @@ function falsee() {
   answ = 0;
   if (ques === answ) {
     score += 1;
-    document.getElementsByClassName("score")[0].innerText = "Điểm: " + score;
+    document.getElementsByClassName("score")[0].innerText = score;
     startgame();
-    time = 4;
+    time = 3;
   } else {
     playg = 0;
-    document.getElementsByClassName("score")[0].innerHTML = "Điểm: " + score;
+    document.getElementsByClassName("score")[0].innerHTML = score;
     document.getElementsByClassName("modal")[0].style.display = "block";
     document.getElementsByClassName("score")[1].innerHTML = "Điểm: " + score;
     time = 0;

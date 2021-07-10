@@ -1,12 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
   text-decoration: none;
   outline: 0;
   border: 0;
 }
-
 *,
 *::before,
 *::after {
@@ -32,56 +33,66 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow: hidden;
 }
-.wrapper {
-}
-#scr .time {
-  display: none;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 20px;
-}
 
 #scr .score {
   position: absolute;
   top: 55px;
-  left: 30px;
-  font-size: 20px;
+  left: 50%;
+  font-size: 40px;
+  z-index: 2;
+  color: #fff;
 }
 
-#scr .highscore {
-  display: inline-block;
+.nametitle {
   position: absolute;
-  top: 80px;
-  left: 30px;
-  font-size: 20px;
+  padding: 10px;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: deeppink;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, deeppink, #1000a5);
+  font-size: 10vw;
+  font-weight: bold;
+  white-space: nowrap;
+}
+@supports (-webkit-background-clip: text) {
+  .nametitle {
+    color: transparent;
+    background-image: linear-gradient(to right, deeppink, #1000a5);
+    -webkit-background-clip: text;
+  }
 }
 
 #mainstart {
   text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-start {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  padding: 5vw;
-  background-color: #ffe0f3;
-  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
+  padding: 4vh;
+  background-color: #fff;
+  box-shadow: 2px 2px 6px #bbbbbb, -2px -2px 6px #fff;
   outline: 0;
   border: 0;
-  font-size: 5vw;
+  font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
 }
 .btn-start:active {
-  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #ffe8f5, inset 3px 3px 6px #aaa,
-    inset -3px -3px 6px #ffe8f5;
+  box-shadow: 2px 2px 6px #bbbbbb, -2px -2px 6px#fff, inset 2px 2px 6px #bbbbbb,
+    inset -2px -2px 6px #fff;
 }
 
 #maingame {
   display: none;
   position: relative;
+  z-index: 0;
 }
 .line {
   position: absolute;
@@ -91,28 +102,29 @@ html {
   background-color: rgb(225, 0, 255);
   box-shadow: 0px 0px 2px #000;
   width: 100%;
-  /* width: calc(100% / 3); */
 }
 #main {
   width: 100%;
   height: 60vh;
-  background-color: #ffdbf0;
   justify-content: center;
   text-align: center;
   display: flex;
   align-items: center;
   position: relative;
   z-index: -1;
-  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
 }
 
 #main span {
-  font-size: 19vw;
+  font-size: 18vw;
+  color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 #truefalse {
   display: flex;
   cursor: pointer;
+  z-index: 1;
 }
 
 #truefalse div {
@@ -120,31 +132,32 @@ html {
   text-align: center;
   justify-content: center;
   align-items: center;
-  height: 36vh;
-
+  width: 27vh;
+  height: 30vh;
   font-size: 12vh;
+  z-index: 1;
 }
 #truefalse div:active {
   box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
 }
 #truefalse .true {
-  background-color: #ffe0f3;
+  background-color: #fff;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
+
   color: #0099ff;
   margin: 5px;
 }
 
 #truefalse .false {
-  background-color: #ffe0f3;
+  background-color: #fff;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 3px 6px #aaa, -3px -3px 6px #fff;
+
   color: red;
   margin: 5px;
 }
@@ -157,6 +170,7 @@ html {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 .modal-content {
@@ -168,15 +182,20 @@ html {
   margin-top: 20vh;
   text-align: center;
   left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
 }
 
 .md {
   text-align: center;
 }
 
-h2.score {
-  font-size: 7vh;
-  margin-top: 20vh;
+h2.score,
+h2.highscore {
+  font-size: 5vh;
+
   color: deeppink;
 }
 
@@ -184,8 +203,7 @@ h2.score {
   padding: 4vh;
   font-size: 3vh;
   border-radius: 10px;
-  background-color: rgb(71, 255, 47);
-
+  background-color: #fff;
   cursor: pointer;
 }
 .btn-reload:active {
