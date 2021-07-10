@@ -183,7 +183,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 30px;
 }
 
 .md {
@@ -193,7 +192,7 @@ html {
 h2.score,
 h2.highscore {
   font-size: 5vh;
-
+  margin-top: 10px;
   color: deeppink;
 }
 
