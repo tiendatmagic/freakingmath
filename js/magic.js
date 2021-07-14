@@ -3,8 +3,8 @@ var time = 3;
 var tim;
 var playg = 0;
 var bgcolor = 0;
-var audio_true = new Audio("true_sound.mp3");
-var audio_false = new Audio("false_sound.mp3");
+var audio_true = new Audio("./sound/true_sound.mp3");
+var audio_false = new Audio("./sound/false_sound.mp3");
 var highscore = JSON.parse(localStorage.getItem("highscore"));
 if (highscore === null) {
   highscore = 0;
