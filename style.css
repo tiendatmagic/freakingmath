@@ -116,7 +116,7 @@ html {
 }
 
 #main span {
-  font-size: 17vw;
+  font-size: 16vw;
   color: #fff;
   position: relative;
   z-index: 1;
@@ -214,6 +214,6 @@ h2.highscore {
 
 @media screen and (max-width: 500px) {
   #main span {
-    font-size: 20vw;
+    font-size: 18vw;
   }
 }
