@@ -3,6 +3,8 @@ var time = 3;
 var tim;
 var playg = 0;
 var bgcolor = 0;
+var audio_true = new Audio("true_sound.wav");
+var audio_false = new Audio("false_sound.wav");
 var highscore = JSON.parse(localStorage.getItem("highscore"));
 if (highscore === null) {
   highscore = 0;
@@ -20,14 +22,14 @@ document
   .getElementsByClassName("btn-start")[0]
   .addEventListener("click", playgame);
 
-document
-  .getElementsByClassName("btn-reload")[0]
-  .addEventListener("click", function () {
-    location.reload();
-  });
 getClass("true")[0].addEventListener("click", truee);
 getClass("false")[0].addEventListener("click", falsee);
-
+getClass("replay")[0].onclick = () => {
+  playgame();
+};
+getClass("returnmainmenu")[0].onclick = () => {
+  location.reload();
+};
 window.addEventListener(
   "keydown",
   function (event) {
@@ -44,7 +46,8 @@ function playgame() {
   score = 0;
   time = 3;
   clearInterval(tim);
-  getClass("modal")[0].style.display = "none";
+  getClass("gover")[0].style.display = "none";
+  getClass("displaynumber")[0].style.display = "block";
   getClass("nametitle")[0].style.display = "none";
 
   getClass("score")[0].innerText = score;
@@ -64,7 +67,7 @@ function setcolor() {
       break;
     case 1:
       document.getElementsByTagName("body")[0].style.backgroundColor =
-        "#0099FF";
+        "#5bbdff";
       break;
     case 2:
       document.getElementsByTagName("body")[0].style.backgroundColor =
@@ -133,7 +136,8 @@ function checktime() {
     if (time === 0) {
       clearInterval(tim);
       getClass("score")[0].innerText = score;
-      getClass("modal")[0].style.display = "block";
+      getClass("gover")[0].style.display = "block";
+      getClass("displaynumber")[0].style.display = "none";
       getClass("score")[1].innerText = score;
     }
 
@@ -154,14 +158,16 @@ function checkclick() {
   if (playg === 1) {
     if (ques === answ) {
       score += 1;
+      audio_true.play();
       getClass("score")[0].innerText = score;
       startgame();
       time = 3;
     } else {
       playg = 0;
+      audio_false.play();
       getClass("score")[0].innerText = score;
-      getClass("modal")[0].style.display = "block";
-
+      getClass("gover")[0].style.display = "block";
+      getClass("displaynumber")[0].style.display = "none";
       time = 0;
     }
     getClass("score")[1].innerText = score;
