@@ -38,8 +38,8 @@ html {
 
 #scr .score {
   position: absolute;
-  top: 55px;
   left: 50%;
+  transform: translate(-50%, 40px);
   font-size: 40px;
   z-index: 2;
   color: #fff;
@@ -95,6 +95,36 @@ html {
   position: relative;
   z-index: 0;
 }
+.gover {
+  color: #fff;
+}
+.gover h2 {
+  font-size: 20px;
+}
+.gover h3 {
+  /* margin-top: 10px; */
+}
+.optiongover {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.optiongover div {
+  width: 80px;
+  height: 65px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.optiongover .reload {
+  color: #c92bc9;
+}
+.optiongover .returnmainmenu {
+  color: #0099ff;
+}
 .line {
   position: absolute;
   top: 0px;
@@ -137,6 +167,7 @@ html {
   height: 30vh;
   font-size: 14vh;
   z-index: 1;
+  border-radius: 10px;
 }
 
 #truefalse .true {
@@ -215,5 +246,10 @@ h2.highscore {
 @media screen and (max-width: 500px) {
   #main span {
     font-size: 18vw;
+  }
+}
+@media screen and (max-height: 555px) {
+  .gover {
+    margin-top: 100px;
   }
 }
