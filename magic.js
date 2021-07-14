@@ -145,19 +145,21 @@ function falsee() {
   checkclick();
 }
 function checkclick() {
-  if (ques === answ) {
-    score += 1;
-    getClass("score")[0].innerText = score;
-    startgame();
-    time = 3;
-  } else {
-    playg = 0;
-    getClass("score")[0].innerHTML = score;
-    getClass("modal")[0].style.display = "block";
-    getClass("score")[1].innerHTML = "Điểm: " + score;
-    time = 0;
+  if (playg === 1) {
+    if (ques === answ) {
+      score += 1;
+      getClass("score")[0].innerText = score;
+      startgame();
+      time = 3;
+    } else {
+      playg = 0;
+      getClass("score")[0].innerHTML = score;
+      getClass("modal")[0].style.display = "block";
+      getClass("score")[1].innerHTML = "Điểm: " + score;
+      time = 0;
+    }
+    savehighscore();
   }
-  savehighscore();
 }
 function savehighscore() {
   if (score > highscore) {
