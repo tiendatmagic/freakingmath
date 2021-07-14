@@ -86,7 +86,8 @@ html {
   cursor: pointer;
 }
 .btn-start:active {
-  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
+  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey,
+    -3px -3px 7px #fff, 3px 3px 5px grey;
 }
 
 #maingame {
@@ -105,7 +106,7 @@ html {
 }
 #main {
   width: 100%;
-  height: 60vh;
+  height: 65vh;
   justify-content: center;
   text-align: center;
   display: flex;
@@ -133,35 +134,37 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 35vh;
+  height: 30vh;
   font-size: 12vh;
   z-index: 1;
 }
-#truefalse div:active {
-  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px grey;
-}
+
 #truefalse .true {
-  background-color: #fff;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-
+  background-color: #fff;
   color: #0099ff;
   margin: 5px;
 }
-
+#truefalse .true:active {
+  color: #fff;
+  background-color: #0099ff;
+}
 #truefalse .false {
-  background-color: #fff;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-
+  background-color: #fff;
   color: red;
   margin: 5px;
 }
-
+#truefalse .false:active {
+  color: #fff;
+  background-color: red;
+}
 .modal {
   display: none;
   position: fixed;
