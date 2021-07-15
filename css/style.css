@@ -121,10 +121,18 @@ html {
   margin: 0 10px;
 }
 .optiongover .replay {
-  color: #c92bc9;
+  color: #ff3bff;
+}
+.optiongover .replay:active {
+  background-color: #ff3bff;
+  color: #fff;
 }
 .optiongover .returnmainmenu {
   color: #0099ff;
+}
+.optiongover .returnmainmenu:active {
+  background-color: #0099ff;
+  color: #fff;
 }
 .line {
   position: absolute;
