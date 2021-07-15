@@ -134,7 +134,7 @@ function startgame() {
 
 function checktime() {
   var tim = setInterval(function () {
-    time -= 5;
+    time -= 6;
     if (time <= 0) {
       time = 0;
     }
