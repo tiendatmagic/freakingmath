@@ -1,5 +1,5 @@
 var score = 0;
-var time = 3; var rtime = 100;
+var time = 1000;
 var tim;
 var playg = 0;
 var bgcolor = 0;
@@ -51,7 +51,7 @@ window.addEventListener(
 function playgame() {
   playg = 1;
   score = 0;
-  time = 3;
+  time = 3000;
   clearInterval(tim);
   getClass("gover")[0].style.display = "none";
   getClass("displaynumber")[0].style.display = "block";
@@ -134,7 +134,7 @@ function startgame() {
 
 function checktime() {
   var tim = setInterval(function () {
-    time -= 1;
+    time -= 5;
     if (time <= 0) {
       time = 0;
     }
@@ -147,15 +147,16 @@ function checktime() {
       getClass("displaynumber")[0].style.display = "none";
       getClass("score")[1].innerText = score;
     }
-
-  }, 1000);
+    console.log(time)
+    rtimee = (time) / 30;
+    console.log(rtimee)
+    getClass("line")[0].style.width = rtimee + "%";
+  }, 1);
 }
 function runtime() {
   setInterval(() => {
-    rtime = time * 1000;
-    rtimee = (rtime * 100) / 3000;
-    console.log(rtimee)
-    getClass("line")[0].style.width = rtimee + "%";
+
+
   }, 1)
 }
 function truee() {
@@ -175,7 +176,7 @@ function checkclick() {
       audio_true.play();
       getClass("score")[0].innerText = score;
       startgame();
-      time = 3;
+      time = 3000;
     } else {
       playg = 0;
       audio_false.play();
