@@ -1,5 +1,5 @@
 var score = 0;
-var time = 3;
+var time = 3; var rtime = 100;
 var tim;
 var playg = 0;
 var bgcolor = 0;
@@ -129,6 +129,7 @@ function startgame() {
   getClass("s1")[0].innerText = a;
   getClass("s2")[0].innerText = b;
   getClass("s3")[0].innerText = c;
+  runtime();
 }
 
 function checktime() {
@@ -146,10 +147,17 @@ function checktime() {
       getClass("displaynumber")[0].style.display = "none";
       getClass("score")[1].innerText = score;
     }
-    getClass("line")[0].style.width = "calc(100% /" + time + ")";
+
   }, 1000);
 }
-
+function runtime() {
+  setInterval(() => {
+    rtime = time * 1000;
+    rtimee = (rtime * 100) / 3000;
+    console.log(rtimee)
+    getClass("line")[0].style.width = rtimee + "%";
+  }, 1)
+}
 function truee() {
   answ = 1;
   checkclick();
